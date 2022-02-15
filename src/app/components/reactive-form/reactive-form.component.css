@@ -1,0 +1,23 @@
+*{
+    margin: 0 ;
+    padding: 0;
+}
+.forms{
+    margin-top: 25px;
+    /* border: 1px solid gainsboro; */
+}
+input {
+    margin-top: 10px;
+    box-shadow: 1px 1px 2px rgb(248, 246, 246);
+}
+label {
+    margin-top: 10px;
+}
+button{
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+}
+.warning{
+    margin-left: 35%;
+}
