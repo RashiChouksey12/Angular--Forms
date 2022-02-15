@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TampleteComponent } from './tamplete.component';
+import { TamplateFormComponent } from './tamplate-form.component';
 
-describe('TampleteComponent', () => {
-  let component: TampleteComponent;
-  let fixture: ComponentFixture<TampleteComponent>;
+describe('TamplateFormComponent', () => {
+  let component: TamplateFormComponent;
+  let fixture: ComponentFixture<TamplateFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TampleteComponent ]
+      declarations: [ TamplateFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TampleteComponent);
+    fixture = TestBed.createComponent(TamplateFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
