@@ -7,22 +7,22 @@ import { FormControl,FormGroup,FormBuilder} from '@angular/forms';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent {
-  RegisterForm:FormGroup;
+  registerForm:FormGroup;
 
   constructor(private fb: FormBuilder){}
 
   ngOnInit():void {
 
-    this.RegisterForm= this.fb.group({
+    this.registerForm= this.fb.group({
       fullName :[''],
       userName:[''],
       email :[''],
       password :[''],
-      confirmPassword :[''],
+      confrimPassword :[''],
       checkBox:[''],
     }); 
   }
   onSubmit() {
-    console.log(this.RegisterForm.value);
+    console.log(this.registerForm.value);
   }
 }

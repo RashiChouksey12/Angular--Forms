@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-3">
-            <form action="" class="forms" [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
+            <form action="" class="forms" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label>Full Name</label>
                     <input type="text" class="form-control" formControlName="fullName">
@@ -34,7 +34,7 @@
 
                 <div class="form-group">
                     <label>Confrim Password</label>
-                    <input type="password" class="form-control" formControlName="confirmPassword">
+                    <input type="password" class="form-control" formControlName="confrimPassword">
                 </div>
                 <div class="form-group">
                     <div>
