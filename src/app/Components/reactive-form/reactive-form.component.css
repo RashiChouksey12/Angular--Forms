@@ -1,7 +1,6 @@
-
-.forms{
+    .forms{ 
     margin-top: 25px;
-    /* border: 1px solid gainsboro; */
+
     }
     input {
     margin-top: 10px;
@@ -10,7 +9,8 @@
     label {
     margin-top: 10px;
     }
-    button{
+    .btn{
+    display: flex;
     margin-top: 10px;
     width: 100px;
     height: 40px;
