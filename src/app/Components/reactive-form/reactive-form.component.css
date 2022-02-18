@@ -1,9 +1,12 @@
     .forms{ 
-    margin-top: 25px;
+    margin-top: 55px;
+    background-color: rgb(176, 197, 197);
+    padding: 20px;
     }
     input {
     margin-top: 10px;
     box-shadow: 1px 1px 2px rgb(248, 246, 246);
+   
     }
     label {
     margin-top: 10px;

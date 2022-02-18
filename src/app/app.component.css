@@ -1,0 +1,11 @@
+nav{
+    background-color: rgba(115, 138, 138, 0.425);
+    padding: 20px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+   
+}
+a{
+    text-decoration: none;
+}
