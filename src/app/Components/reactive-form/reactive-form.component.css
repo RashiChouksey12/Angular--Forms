@@ -1,5 +1,9 @@
     .forms{ 
-    margin-top: 25px;
+    margin-top: 55px;
+    background-color: rgba(209, 216, 216, 0.822);
+    padding: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(185, 179, 179);
+
     }
     input {
     margin-top: 10px;

@@ -18,7 +18,7 @@ export class ReactiveFormComponent {
       userName:[''],
       email :[''],
       password :[''],
-      confrimPassword :[''],
+      confirmPassword :[''],
       checkBox:[''],
     }); 
   }
