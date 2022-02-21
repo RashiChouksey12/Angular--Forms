@@ -21,10 +21,8 @@ import { TamplateFormComponent } from './Components/tamplate-form/tamplate-form.
     FormsModule,
     RouterModule.forRoot([
       {path: '', component: ReactiveFormComponent},
-      {path: 'tamplate-form', component: TamplateFormComponent},
+      {path: 'template-form', component: TamplateFormComponent},
       ]),
-   
-  
   ],
   providers: [],
   bootstrap: [AppComponent]
