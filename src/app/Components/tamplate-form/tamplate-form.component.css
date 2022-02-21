@@ -2,6 +2,8 @@
     background-color: rgba(205, 207, 207, 0.548);
     margin-top: 55px;
     padding: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(185, 179, 179);
+
     }
     .lbl {
     margin-top: 10px ;
