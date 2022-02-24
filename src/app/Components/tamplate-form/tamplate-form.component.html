@@ -11,25 +11,46 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-3">
-            <form action="" class="forms" #regForm="ngForm" (ngSubmit)="regUser(regForm.value)">
+            <form action="" class="forms" #regForm="ngForm" (ngSubmit)="regUser()">
                 <div class="form-group">
                     <label for="firstName" class="lbl">First Name</label>
-                    <input type="text" class="form-control lbl " name="firstName" id="firstName" ngModel>
+                    <input required minlength="3" placeholder="First_Nmae" maxlength="10" [(ngModel)]="schema.firstName" name="firstName" type="text" #firstName="ngModel"class="form-control lbl"id="firstName">
+                    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                        <div *ngIf="firstName.errors && firstName.errors['required']">First Name is required.</div>
+                        <div *ngIf="firstName.errors && firstName.errors['minlength']"> minimum 3 character required .</div>
+                        <div *ngIf="firstName.errors && firstName.errors['maxlength']">F maximum 10 character.</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="lastName" class="lbl">Last Name</label>
-                    <input type="text" class="form-control lbl" name="lastName" id="lastName" ngModel>
+                    <input required minlength="3" placeholder="Last_Name" maxlength="10" [(ngModel)]="schema.lastName" name="lastName" type="text" #lastName="ngModel"class="form-control lbl"id="lastName">
+                    <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                        <div *ngIf="lastName.errors && lastName.errors['required']">last Name is required.</div>
+                        <div *ngIf="lastName.errors && lastName.errors['minlength']"> minimum 3 character required .</div>
+                        <div *ngIf="lastName.errors && lastName.errors['maxlength']"> maximum 10 character.</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="lbl">Email</label>
-                    <input type="email" class="form-control lbl" name="email" id="email" ngModel>
+                    <input required  placeholder="email" [(ngModel)]="schema.email" name="email" type="text" #email="ngModel"class="form-control lbl"id="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                    >
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                        <p *ngIf="email.errors?.required">Email is a required field!</p>
+                        <p *ngIf="email.errors?.pattern">This is not a valid Email!!!</p>
+                      </div>
                 </div>
 
                 <div class="form-group">
                     <label for="password" class="lbl">Password</label>
-                    <input type="password" class="form-control lbl" name="password" id="password" ngModel>
+                    <input required minlength="3" placeholder="password" maxlength="10" [(ngModel)]="schema.password" name="password" type="text" #password="ngModel"class="form-control lbl"id="password">
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                        <div *ngIf="password.errors && password.errors['required']"> password is required.</div>
+                        <div *ngIf="password.errors && password.errors['minlength']"> minimum 3 character required .</div>
+                        <div *ngIf="password.errors && password.errors['maxlength']"> maximum 10 character.</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
