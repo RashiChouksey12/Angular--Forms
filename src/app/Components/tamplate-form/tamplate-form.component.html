@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template driven Form</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template driven Form</title>
 </head>
+
 <body>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-3">
-            <form action="" class="forms" #regForm="ngForm" (ngSubmit)="regUser(regForm.value)">
-                <div class="form-group">
-                    <label for="firstName" class="lbl">First Name</label>
-                    <input type="text" class="form-control lbl " name="firstName" id="firstName" ngModel>
-                </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-3">
+      <form action="" class="forms" #regForm="ngForm" (ngSubmit)="regUser()">
+        <div class="form-group">
+          <label for="firstName" class="lbl">First Name</label>
+          <input required minlength="3" placeholder="First_Name" maxlength="10" [(ngModel)]="schema.firstName"
+            name="firstName" type="text" #firstName="ngModel" class="form-control lbl" id="firstName">
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors && firstName.errors['required']">First Name is required.</div>
+            <div *ngIf="firstName.errors && firstName.errors['minlength']"> minimum 3 character required .
+            </div>
+            <div *ngIf="firstName.errors && firstName.errors['maxlength']">F maximum 10 character.</div>
 
-                <div class="form-group">
-                    <label for="lastName" class="lbl">Last Name</label>
-                    <input type="text" class="form-control lbl" name="lastName" id="lastName" ngModel>
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="lbl">Email</label>
-                    <input type="email" class="form-control lbl" name="email" id="email" ngModel>
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="lbl">Password</label>
-                    <input type="password" class="form-control lbl" name="password" id="password" ngModel>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </div>
-
-            </form>
+          </div>
         </div>
-        <div class=" col"> </div>
+
+        <div class="form-group">
+          <label for="lastName" class="lbl">Last Name</label>
+          <input required minlength="3" placeholder="Last_Name" maxlength="10" [(ngModel)]="schema.lastName"
+            name="lastName" type="text" #lastName="ngModel" class="form-control lbl" id="lastName">
+          <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+            <div *ngIf="lastName.errors && lastName.errors['required']">last Name is required.</div>
+            <div *ngIf="lastName.errors && lastName.errors['minlength']"> minimum 3 character required .
+            </div>
+            <div *ngIf="lastName.errors && lastName.errors['maxlength']"> maximum 10 character.</div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="userEmailId">User Email</label>
+          <div>
+            <input class="form-control" id="userEmaild" type="text" appEmailvalidator
+              placeholder="User Email (required)" required [(ngModel)]="schema.userEmail" name="userEmail"
+              #userEmailVar="ngModel"
+              [ngClass]="{'is-invalid': (userEmailVar.touched || userEmailVar.dirty) && !userEmailVar.valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="userEmailVar.hasError('required')">
+                User email is required.
+              </span>
+              <span *ngIf="userEmailVar.hasError('emailvalidator')">
+                Please provide a valid email address
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userEmailId">User password</label>
+          <div>
+            <input class="form-control" id="userEmaild" type="text" appPasswordvalidator
+              placeholder="User password (required)" required invalidPassword [(ngModel)]="schema.password"
+              name="password" #passwordVar="ngModel"
+              [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }" />
+            <span class="invalid-feedback">
+              <span *ngIf="passwordVar.hasError('required')">
+                password is required.
+              </span>
+              <span *ngIf="passwordVar.hasError('passValidate')">
+                Password should be atleast 8 characters
+                long and should contain one number,one character and one special
+                character
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
     </div>
+    <div class=" col"> </div>
+  </div>
 </body>
+
 </html>
