@@ -1,7 +1,6 @@
 import { Directive } from '@angular/core';
 import { Validator, NG_VALIDATORS, ValidatorFn, FormControl } from '@angular/forms';  
 
-
 @Directive({
   selector: '[appPasswordvalidator]',
   providers: [  
